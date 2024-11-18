@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	int a, b;
+	//두 정수(a, b)를 입력받아 a가 b보다 크거나 같으면(이상) 1, a가 b보다 작으면(미만) 0을 출력하는 프로그램을 작성해보자.
+	//입력 받기
+	scanf("%d %d", &a, &b);
+	//a >= b
+	if (a == b)
+	{
+		printf("1");
+	}	
+	else
+	{
+		printf("0");
+	}
+
+	
+
+
+
+}
