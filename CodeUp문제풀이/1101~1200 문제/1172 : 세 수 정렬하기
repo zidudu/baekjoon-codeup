@@ -1,0 +1,46 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	int a, b, c;
+	//입력
+	scanf("%d %d %d", &a, &b, &c);
+
+	//세 값을 배열에 넣음
+	int list[3];
+	list[0] = a; list[1] = b; list[2] = c;
+	//선택정렬 수행
+	for (int i = 0; i < 2; i++) {
+		//min
+		int min = i;
+		for (int j = i+1; j < 3; j++) {
+			if (list[min] > list[j]) min = j;
+		}
+		//교환
+		int temp = list[min];
+		list[min] = list[i];
+		list[i] = temp;
+	}
+	//출력
+	printf("%d %d %d", list[0], list[1], list[2]);
+
+	//=>음...for이나 배열을 안쓰고 if만으로 만들어보고 싶지만...너무 귀찮음
+}
+//세 수를 오름차순으로 정렬하려고 한다. (낮은 숫자->높은 숫자)
+//
+//예)
+//
+//5 8 2   ====> 2 5 8    로 출력
+//
+//입력
+//세 정수가 입력된다.
+//
+//출력
+//낮은 숫자 부터 출력한다.
+//
+//입력 예시
+//8 7 6
+//
+//출력 예시
+//6 7 8
+//도움말
+//숫자가 같을 때도 생각하세요~
