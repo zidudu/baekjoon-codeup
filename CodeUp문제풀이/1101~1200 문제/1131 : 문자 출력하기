@@ -5,3 +5,4 @@ int main() {
 	printf("%c", a);
 
 }
+//%c : 문자
