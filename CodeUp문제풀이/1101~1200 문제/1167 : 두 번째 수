@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//세개 숫자
+	int a,b,c;
+	//총합,max,min
+	int total, max, min;
+	//입력
+	scanf("%d %d %d", &a,&b,&c);
+	
+	//total 값에 모두 더함
+	total = a + b + c;
+	//max와 min을 일단 a로 정함
+	max = a;
+	min = a;
+	//max,min을 b,c와 비교하여 다시 정의함
+	if (max < b) max = b;
+	if (max < c) max = c;
+
+	if (min > b) min = b;
+	if (min > c) min = c;
+
+	//total 값에 min과 max를 뺌
+	total = total - min - max;
+
+	//출력
+	printf("%d", total);
+
+}
+//세 개의 숫자가 주어질 때 작은 순서로 나열 했을 때, 두번째 수를 출력해보자.
+//
+//예를 들어, 5 9 2 가 있다면, 작은 순서로 나열하면 2 5 9이고 두번째 수는 5이다.
+//
+//
+//
+//입력
+//세 개의 정수가 공백으로 구분되어 입력된다.
+//
+//출력
+//세 개의 정수를 작은 순서로 나열 했을 때, 두번째 수를 출력한다.
