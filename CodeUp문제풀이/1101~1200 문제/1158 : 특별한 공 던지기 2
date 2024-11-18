@@ -1,0 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	int a;
+
+	scanf("%d", &a);
+	if ((a >= 30 && 40 >= a) || (a >=60 &&a<=70)) printf("win");
+	else printf("lose");
+}
