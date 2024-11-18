@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main() {
+	float a,b;
+	scanf("%f %f", &a, &b);
+	printf("%0.2f", a*b);
+	return 0;
+}
+//  %0.2f 를 사용해서 소수 둘째자리까지 출력이 가능하다
