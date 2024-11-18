@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main() {
+    printf("special characters\n[\\n,\\\",\\\\] is very important.");
+    return 0;
+}
+//     \" 의 출력은 => " 
+//     \\ 의 출력은 => \
