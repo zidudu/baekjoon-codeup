@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+	//세 정수 변수와 평균 변수
+	float a, b, c;
+	float average;
+	//세 정수 입력
+	scanf("%f %f %f", &a, &b, &c);
+	//세 정수의 평균 
+	average = (a + b + c) / 3;
+	//평균 출력(소수 둘째자리까지)
+	printf("%0.2f", average);
+}
+//세 정수가 입력되면 평균을 출력하시오.
+//세 정수가 입력된다.
+//세 수의 평균을 소수 둘째자리까지 출력하시오.
