@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//점수
+	int Score;
+	//입력
+	scanf("%d", &Score);
+	if (Score > 100 || Score < 0) return 0;
+	// 90점 이상
+	if (Score >= 90) printf("A");
+	//80점 이상
+	else if (Score >= 80)printf("B");
+	//70점 이상
+	else if (Score >= 70) printf("C");
+	//60점 이상
+	else if (Score >= 60) printf("D");
+	//60점 미만
+	else printf("F");
+}
+//재호는 이번 시험에 받은 성적이 궁금했다.
+//
+//점수가 입력되면 등급을 출력하시오.
+//
+//등급)
+//
+//90점 이상 : A
+//
+//80점 이상 : B
+//
+//70점 이상 : C
+//
+//60점 이상 : D
+//
+//60점 미만 : F
+//
+//입력
+//점수가 정수로 입력된다. (입력되는 정수는 0~100이다)
+//
+//출력
+//점수에 따라 등급을 출력한다.
