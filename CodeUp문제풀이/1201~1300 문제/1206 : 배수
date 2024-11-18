@@ -1,0 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//정수 2개
+	int a, b;
+	//몫
+	int share;
+	//입력 
+	scanf("%d %d", &a,&b);
+	
+	//b가 a의 배수인지 검사
+	if (b % a == 0) {
+		//몫 저장 후 출력
+		share = b / a;
+		printf("%d*%d=%d", a, share, b);
+	}
+	else if (a % b == 0) {
+		//몫 저장 후 출력
+		share = a / b;
+		printf("%d*%d=%d", b, share, a);
+
+	}
+	else {
+		printf("none");
+	}
+}
+//두 자연수 a, b가 주어진다.
+//
+//b가 a의 배수이면 "a*x=b"를 출력하고,
+//
+//a가 b의 배수이면 "b*x=a"를 출력하고,
+//
+//배수관계가 아니면 "none"을 출력하시오.
+//
+//예)
+//
+//5 10    ====> 5 * 2 = 10
+//
+//14 2   ======> 2 * 7 = 14
+//
+//3 7 ==== = > none
