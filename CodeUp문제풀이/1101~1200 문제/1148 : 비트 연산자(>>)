@@ -1,0 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	int a, x;
+	//입력 받기
+	scanf("%d %d", &a,&x);
+
+	printf("%d", a >> x);
+	//비트연산자 >> 은 주어진 a값을 오른쪽으로 x번 이동한 후 결과를 출력한다.
+
+	//	이러한 비트 연산을 SHIFT 연산이라고도 부르고, >> 로 표시한다.
+}
