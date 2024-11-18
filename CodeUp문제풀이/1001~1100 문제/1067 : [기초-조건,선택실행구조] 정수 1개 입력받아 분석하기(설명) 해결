@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	int a;
+
+	//입력(0은 입력 x)
+	scanf("%d", &a);
+	if (a == 0) {
+		printf("0은 입력하지 않기");
+		return 0;
+	}
+	// 음/양 비교
+	//양
+	if (a > 0) {
+		printf("plus\n");
+		//짝
+		if (a % 2 ==0) printf("even\n");
+		//홀
+		else printf("odd\n");
+	}
+	//음
+	else if (a < 0) {
+		printf("minus\n");
+		//짝
+		if (a % 2 ==0) printf("even\n");
+		//홀
+		else printf("odd\n");
+	}
+}
