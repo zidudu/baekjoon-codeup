@@ -1,0 +1,43 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//정수
+	int a;
+	//입력
+	scanf("%d", &a);
+	//정수값의 일의 자리 가져오기
+	int a_one = a % 10;
+	//일의 자리가 1~3이 포함되어 있고, 11~13이 아닌 숫자이면
+	if (a < 11 || a > 13) {
+		if (a_one == 1) printf("%dst", a);
+		else if (a_one == 2) printf("%dnd", a);
+		else if (a_one == 3) printf("%drd", a);
+		else printf("%dth", a);
+	}
+	else printf("%dth", a);
+}
+//영어로 서수를 표현할 때 다음과 같이 나타낸다.
+//
+//1st  2nd  3rd  4th  5th  6th  ... 10th
+//
+//11th 12th 13th 14th 15th  ...  20th
+//
+//21st 22nd 23rd 24th 25th  ...  30th
+//
+//31st 32nd 33rd 34th 35th  ...  40th
+//
+//41st 42nd 43rd 44th 45th  ...  50th
+//
+//...
+//
+//91st 92nd 93rd 94th 95th  ...  99th
+//
+//
+//
+//1~99 중 하나가 숫자가 입력되면 영어 서수 표현을 출력하시오.
+//
+//입력
+//1~99 중 한 정수가 입력된다.
+//
+//출력
+//입력된 정수의 영어 서수 표현을 출력한다.
