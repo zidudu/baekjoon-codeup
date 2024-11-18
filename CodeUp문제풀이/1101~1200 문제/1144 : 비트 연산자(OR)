@@ -1,0 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	int a, b;
+	//입력 받기
+	scanf("%d %d", &a,&b);
+
+	printf("%d", a | b);
+	//비트연산자 | 은 주어진 2개의 값을 2진법으로 변환한 뒤, 비트별로 OR 연산을 수행한 뒤 결과를 출력한다.
+
+	//	이러한 비트 연산을 OR 연산이라고도 부르고, | 로 표시한다.
+}
