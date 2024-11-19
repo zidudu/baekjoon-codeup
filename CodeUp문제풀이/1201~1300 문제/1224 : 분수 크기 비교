@@ -1,0 +1,39 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//a b c d
+	float a, b, c, d;
+	//입력
+	scanf("%f %f %f %f", &a, &b, &c, &d);
+	if (a / b > c / d) printf(">");
+	else if (a / b == c / d) printf("=");
+	else printf("<");
+
+    //// 이렇게 써도 괜찮음. a/b 와 c/d에 b*d를 곱하면 
+    // 양쪽엔 a*d와 c*b만 남게 되니 부동소수점 계산 오차를 피할 수 있게 됨
+    // 
+     //변수 선언
+    //int a, b, c, d;
+    //// 입력
+    //scanf("%d %d %d %d", &a, &b, &c, &d);
+    //// 분수 크기 비교 (a * d와 c * b로 비교)
+    //if (a * d > c * b)
+    //    printf(">");
+    //else if (a * d == c * b)
+    //    printf("=");
+    //else
+    //    printf("<");
+}
+//분수의 크기를 비교하는 프로그램을 작성하시오.
+//
+//분수는 a / b, c / d 모양으로 주어진다.
+//
+//입력
+//a, b, c, d 가 차례대로 입력으로 주어진다.(자연수)
+//
+//출력
+//a / b > c / d  이면 > 를 출력,
+//
+//a / b = c / d  이면 = 를 출력,
+//
+//a / b < c / d  이면 < 를 출력.
