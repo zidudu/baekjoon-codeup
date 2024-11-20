@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//시작값, 곱할 값, 더할 값, 몇번째 항인지 나타내는 정수(n)
+	int a,b,c, n;
+	
+	int sum;
+
+	//입력
+	scanf("%d %d %d %d",&a,&b,&c,&n);
+	sum = a;
+	//n개의 정수 입력 후 합하기
+	for (int i = 1; i < n; i++) {
+		// 시작값 * 곱할 값 + 더할 값 = 결과값
+		//결과값 * 곱할 값 + 더할 값 = 결과갑
+		sum = (sum * b) + c;
+		//printf("%d ", sum);
+	}
+	//값 출력
+	printf("%d", sum);
+}
