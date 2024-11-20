@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//정수(n)
+	int n;
+	
+	int sum=0;
+
+	//입력
+	scanf("%d",&n);
+
+	//맨 마지막 자리에 1이 있는지 확인
+	for (int i = 0; i <= n; i++) {
+		if (i % 10 == 1) sum++;
+	}
+	//값 출력
+	printf("%d", sum);
+}
