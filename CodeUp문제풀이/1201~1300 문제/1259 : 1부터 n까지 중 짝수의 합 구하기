@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define MAX
+int main() {
+	//a , b 
+	int n;
+	//입력
+	scanf("%d", &n);
+	//총합
+	int sum = 0;
+	
+	//모두 더하기
+	for (int i = 1; i <= n; i++) {
+		if(i%2==0) sum += i;
+	}
+	printf("%d", sum);
+}
