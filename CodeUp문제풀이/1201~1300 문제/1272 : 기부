@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//존의 번호(k), 밥의 번호(h)
+	int k, h;
+	//입력
+	scanf("%d %d",&k,&h);
+	
+	int money = 0;
+	//존의 번호가 홀수인지 짝수인지 검사
+	// 그런다음 (k/2) + 1 인 홀수 계산을 할지
+	// (k/2) * 10 을 할건지 계산
+	
+	if (k % 2 == 1) money += (k / 2) + 1;
+	else money += (k / 2) * 10;
+
+	if (h % 2 == 1) money += (h / 2) + 1;
+	else money += (h / 2) * 10;
+
+	//출력
+	printf("%d", money);
+
+}
