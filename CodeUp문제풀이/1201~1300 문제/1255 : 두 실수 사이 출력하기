@@ -1,0 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define MAX
+int main() {
+	double a,b;
+	double step = 0.01;
+	scanf("%lf %lf", &a, &b);
+
+	for (double i = a; i <= b; i+=step) {
+		printf("%0.2lf ", i);
+	}
+}
