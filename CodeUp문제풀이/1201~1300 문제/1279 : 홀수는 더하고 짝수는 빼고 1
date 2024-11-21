@@ -1,0 +1,37 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//데이터 a b
+	int a, b;
+	//총합
+	int sum = 0;
+	//입력
+	scanf("%d %d", &a, &b);
+	if (a > b) return 0;
+
+	//a b 구간에서 홀수는 더하고 짝수는 빼기
+	for (int i = a; i <= b; i++) {
+		if (i % 2 == 1) sum += i;
+		else sum -= i;
+	}
+	printf("%d", sum);
+
+
+}
+/*
+두 자연수 a, b 사이의 구간에 대해서
+
+홀수는 더하고 짝수는 뺀다음의 합을 출력하시오.
+
+예)
+
+a = 5, b=10 일 경우, 5 - 6 + 7 - 8 + 9 - 10 = -3
+
+입력
+두 자연수 a, b를 입력 받는다.
+
+(반드시 a가 b보다 같거나 작게 입력된다.)
+
+출력
+a, b 사이의 수 중 홀수는 더하고 짝수는 뺀 결과를 출력하시오.
+*/
