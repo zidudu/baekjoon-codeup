@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main(){
+int n;
+if(n>12) return 0;
+scanf("%d",&n);
+int sum = 1;
+
+//팩토리얼 계산
+for(int i=0;i<n; i++){
+sum = sum *  (n-i) ;
+}
+printf("%d",sum);
+}
