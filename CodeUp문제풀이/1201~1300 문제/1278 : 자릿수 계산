@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//데이터
+	long long n;
+	//카운팅
+	int count = 0;
+	//증가값
+	long long mul = 10;
+	//입력
+	scanf("%lld", &n);
+	if (n < 1) return 0;
+
+	while (1) {
+		//몇자리인지 알아내기
+		if (n / mul == 0) { count++; break; }
+		else count++;
+		//printf("mul = %lld 일때 count = %lld\n", mul, count);
+		mul *= 10;
+	}
+	printf("%d", count);
+}
+/*
+어떤 숫자가 입력되면 그 숫자가 몇 자릿수 숫자인지 알아내는 프로그램을 작성하시오.
+
+예)
+
+7   ----> 1   (1자릿수)
+
+10  ----> 2   (2자릿수)
+
+4322 ----> 4   (4자릿수)
+
+입력
+1이상의 자연수 n이 입력된다. (n은 int 범위)
+
+출력
+그 숫자가 몇 자릿수 인지 출력하시오.
+
+*/
