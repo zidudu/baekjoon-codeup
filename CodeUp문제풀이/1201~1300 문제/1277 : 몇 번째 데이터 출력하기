@@ -1,0 +1,53 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//데이터의 개수
+	int n;
+	//입력 데이터값
+	int data;
+	//첫번째,중간,마지막 데이터 변수
+	int first, middle, last;
+	//입력
+	scanf("%d", &n);
+	//첫번째 값으로 first middle,last 초기화
+	scanf("%d", &data);
+	first = data; middle = data; last = data;
+	for (int i = 1; i < n; i++) {
+		//n개의 데이터 입력
+		scanf("%d", &data);
+		if (i == n/2) middle = data;
+		else if (i == n - 1) last = data;
+	}
+	printf("%d %d %d", first, middle, last);
+}
+/*
+첫 줄에 데이터의 개수 N(N은 홀수)이 입력되고, 그 다음 줄에 N개의 데이터가 입력된다.
+
+여기서 첫번째 데이터, 중간 데이터, 마지막 데이터를 출력하시오.
+
+예)
+
+5
+
+2 4 6 1 7
+
+이면
+
+2 6 7
+
+이 출력된다.
+
+(첫번째 데이터 2,
+
+중간 데이터 6,
+
+마지막 데이터 7)
+
+입력
+입력으로 N이 주어지고 그 다음줄에 N개의 데이터가 공백으로 구분되어 입력된다.(단, N>=1인 홀수)
+
+출력
+첫번째, 중간, 마지막 데이터 값을 출력한다.
+
+
+*/
