@@ -1,0 +1,50 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	//정수와 사칙연산기호
+	int a; 
+	char Operater = '+';
+	int sum = 0;
+	scanf("%d", &a);
+	sum = a;
+	while (1) {
+		//입력
+		scanf("%c", &Operater);
+		if (Operater == '=') break;
+		scanf("%d", &a);
+		//계산
+		if (Operater == '+') {
+			sum = sum + (a);
+		}
+		else if (Operater == '-') {
+			sum = sum - (a);
+		}
+		else if (Operater == '*') {
+			sum = sum * (a);
+		}
+		else if (Operater == '/') {
+			if (a == 0) return 0;
+			sum = sum / (a);
+		}
+	}
+	//결과값 출력
+	printf("%d", sum);
+}
+/*
+계산기 1에서 두 피연산자에 대한 연산만 다루었다.
+
+이번에는 식을 입력하면 차례대로 계산하여 출력하는 계산기를 만들어보자.
+
+단, 우선순위는 따지지 않고 왼쪽에서 부터 차례대로 계산하고, 모든 계산은 정수형 계산으로 처리한다.
+
+입력
+첫째 줄에 정수와 사칙연산기호가 식으로 입력된다.
+
+(정수는 int 범위, 괄호 없이 +,-,*,/)
+
+식의 마지막엔 =가 입력된다.
+
+출력
+왼쪽부터 차례대로 연산한 결과를 출력한다.(우선순위x)
+*/
