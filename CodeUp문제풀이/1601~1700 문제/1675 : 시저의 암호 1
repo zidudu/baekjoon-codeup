@@ -1,33 +1,42 @@
 #define _CRT_SECURE_NO_WARNINGS_
 #include <stdio.h>
-
+//다시 한번 풀어보기!
 int main() {
 	//문자
-	char ch;
+	char ch = 0;
 	//변형 문자
 	char change_ch;
-	//while (1) {
-	//	//입력
-	//	scanf("%c", &ch);
-	//	//엔터 검사와 공백 검사
-	//	if (ch == EOF) break;
-	//	else if (ch == ' ') change_ch = ' ';
-	//	else change_ch = ch - 3; //값에서 변형하여 저장
-	//	//출력
-	//	printf("%c", change_ch);
-	//}
-
-
-	while(ch = getchar() !=EOF)
-	{		
-		//ch가 공백문자가 아닌 경우
-		if (ch == ' ') change_ch = ' ';// 문자값에 3을 더해 변형하여 change_ch 변수에 넣음
-		//else if (ch == '\n') change_ch = '\n';
-		else  change_ch = ch - 3;
+	while ((ch = getchar()) != EOF) {
+		//공백일땐 change_ch를 공백으로 만듬
+		if (ch == ' ') change_ch = ' ';
+		//a,b,c인 경우 -3을 하면 ^,_,`가 나와서 이 값들에 23을 더해 x,y,z가 나오게 함
+		else if (ch >= 97 && ch <= 99) {
+			change_ch = ch + 23;
+			//printf("change_ch 값 : %c %d", change_ch, change_ch);
+		}
+		//d~z까지는 -3을 함
+		else change_ch = ch - 3; //값에서 변형하여 저장
 		//출력
 		printf("%c", change_ch);
 	}
+	
 	return 0;
+	//해결점: 1. ch=getchar()에서 이것을 가로로 묶어야만 이 계산 결과값이 참인지 거짓인지 확실히 판별 가능
+			// 2. if 와 else if에서 ch>=97 구문에 else if가 아닌 if를 씀. 즉, 공백일때 첫 if문을 수행한 다음, 그다음 if문도 실행해서 else에서 -3을하게되버림.
+			// 3. char ch 에서 ch를 아무 값이라도 초기화 해놓는게 좋음.
+			// 4. 메모리 초과는 주석때문에 생김...코드 제출할땐 쓸데없는 주석은 제거하고 보내자.
+
+
+	//while(ch = getchar() !=EOF)
+	//{		
+	//	//ch가 공백문자가 아닌 경우
+	//	if (ch == ' ') change_ch = ' ';// 문자값에 3을 더해 변형하여 change_ch 변수에 넣음
+	//	//else if (ch == '\n') change_ch = '\n';
+	//	else  change_ch = ch - 3;
+	//	//출력
+	//	printf("%c", change_ch);
+	//}
+	//return 0;
 
 
 
@@ -61,3 +70,5 @@ int main() {
 출력
 암호문을 원문으로 복원하여 출력하시오.
 */
+
+
