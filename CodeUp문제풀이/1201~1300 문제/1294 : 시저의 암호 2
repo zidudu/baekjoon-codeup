@@ -1,0 +1,49 @@
+#define _CRT_SECURE_NO_WARNINGS_
+#include <stdio.h>
+int main() {
+	//문자
+	char ch = 0;
+	//변형 문자
+	char change_ch;
+	while ((ch = getchar()) != EOF) {
+		//공백일땐 change_ch를 공백으로 만듬
+		if (ch == ' ') change_ch = ' ';
+		//a,b,c인 경우 -3을 하면 특수문자가 나와서 이 값들에 23을 빼서 a,b,c가 나오게 함
+		else if (ch >= 'x' && ch <= 'z') {
+			change_ch = ch - 23;
+			//printf("change_ch 값 : %c %d", change_ch, change_ch);
+		}
+		//a~w까지는 +3을 함
+		else change_ch = ch + 3; //값에서 변형하여 저장
+		//출력
+		printf("%c", change_ch);
+	}
+	
+	return 0;
+}
+/*
+※ 씨저의 암호 원리는 앞의 문제를 참고하세요.
+
+
+
+대현이는 씨저의 암호 방식을 이용하여 문장을 만들려고 한다.
+
+never trust brutus 를 씨저의 암호로 바꾸면 qhyhu wuxvw euxwxv 이다.
+
+
+
+그런데 집중력이 약한 대현이는 하나 하나 찾아서 암호로 바꾸는데 어려움을 겪고 있다.
+
+우리가 대현이를 위해 평문을 씨저의 암호문으로 바꾸는 프로그램을 만들어주자.
+
+
+
+입력
+평문이 주어진다.
+
+
+
+출력
+씨저의 암호문을 출력한다.*/
+
+
