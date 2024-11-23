@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    char ch;
+    int result = 0, num = 0;
+    char op = '+';
+
+    while ((ch = getchar()) != '=') {
+        //숫자가 입력될때
+        if (ch >= '0' && ch <= '9') {
+            num = num * 10 + (ch - '0');//(ch - '0')는 아스키값으로 '0'은 48이고 만약 ch=1이면 '1'=49라서 49-48=1이 나옴. 즉 문자가 실제 숫자로 변형되게 해줌
+            //num
+        }
+        //연산기호가 입력될때
+        else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+            // 이전 숫자와 연산 수행
+            if (op == '+') result += num;
+            else if (op == '-') result -= num;
+            else if (op == '*') result *= num;
+            else if (op == '/') result /= num;
+            num = 0; // 새로운 숫자를 위해 초기화
+            op = ch; // 연산자 저장
+        }
+    }
+    // 마지막 연산 수행. =이 나오면서 마지막에 입력한 num값을 op값에 따라 연산함. 
+    if (op == '+') result += num;
+    else if (op == '-') result -= num;
+    else if (op == '*') result *= num;
+    else if (op == '/') result /= num;
+    //결과
+    printf("Result: %d\n", result);
+    return 0;
+    /*
+    그러면 123 + 45 = 를 친다면, 하나씩 받으니 num에다가 1받고, 
+    자릿수 이동후 2받고 또 이동후 3받고 하면 123이 되고, 
+    연산자 +가 나왔으니 else if가 실행되서 result 값에 그 num숫자를 더하고 나서
+    45란 값이 나온 다음 = 이 나왔으니 마지막 연산 수행 때 
+    op에 저장한 연산자를 통해 num=45값을 더하여 result를 출력
+
+    전체 구조 요약
+    입력 데이터를 한 글자씩 처리하면서:
+
+    숫자를 읽을 때는 num에 값을 누적합니다.
+    연산자가 나오면:
+    result에 이전 숫자(num)를 연산자로 계산합니다.
+    num을 초기화하고, 새로운 연산자를 저장합니다.
+    =를 만나면 마지막으로 계산을 수행합니다.
+    */
+}
