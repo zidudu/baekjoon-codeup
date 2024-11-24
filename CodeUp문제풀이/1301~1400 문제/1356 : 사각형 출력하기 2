@@ -1,0 +1,56 @@
+#define _CRT_SECURE_NO_WARNINGS_
+#include <stdio.h>
+int main() {
+    //사각형의 길이 n
+    int n;
+    //사각형 모양
+    char ar = '*';
+    //빈칸
+    char empty = ' ';
+    //입력
+    scanf("%d", &n);
+
+
+    //첫번째 방법. 코드가 구분이 잘되어있지만, for문의 과다사용문제     
+     
+    ////가로 세로 길이 n인 안이 비워져있는 사각형을 *로 출력
+    //for (int i = 0; i < n; i++) {
+    //    //처음이거나 마지막일땐 변을 생성
+    //    if (i == 0 || i == n - 1) {
+    //        for (int j = 0; j < n; j++) {
+    //            printf("%c", ar);
+    //        }
+    //    }
+    //    //중간일땐 비워져있는 변 생성
+    //    else {
+    //        for (int k = 0; k < n; k++) {
+    //            //시작값과 끝값은 * 출력
+    //            if (k == 0 || k == n - 1) printf("%c", ar);
+    //            //중간은 공백 출력
+    //            else printf("%c", empty);
+    //        }
+    //    }
+    //    printf("\n");
+    //}
+
+
+
+    //두번째 방법. for문 2개로 하고 조건문을 통해 값 출력하는 형식
+    //이게 더 깔끔하게 리팩토링 된듯
+
+    //가로 세로 길이 n인 안이 비워져있는 사각형을 *로 출력
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            //여기서 i==0||i==n-1 ||j==0 || j==n-1로 함
+            //테두리 부분일때
+            if (i == 0 || i == n - 1 || j == 0 || j == n - 1) {
+                printf("%c", ar);
+            }
+            //중간의 공백일때
+            else {
+                printf("%c", empty);
+            }
+        }
+        printf("\n");
+    }
+}
