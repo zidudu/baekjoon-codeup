@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS_
+#include <stdio.h>
+int main() {
+    //삼각형의 길이 n
+    int n;
+    //삼각형 모양
+    char ar = '*';
+    //입력
+    scanf("%d", &n);
+    //가로 세로 길이 n인 직각삼각형을 *로 출력
+    for (int i = n; i > 0; i--) {
+
+        for (int j = 0; j < i; j++) { //i+1까지의 조건을 걸어 한줄에 i+1만큼 별이 나오게 함
+          //출력
+          printf("%c", ar);
+        }
+        printf("\n");
+    }
+
+}
