@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS_
+#include <stdio.h>
+int main() {
+    //사각형의 길이 n
+    int n;
+    //사각형 모양
+    char ar = '*';
+    //입력
+    scanf("%d", &n);
+    //가로 세로 길이 n인 사각형을 *로 출력
+    for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < n; j++) {
+          //출력
+          printf("%c", ar);
+        }
+        printf("\n");
+    }
+
+}
