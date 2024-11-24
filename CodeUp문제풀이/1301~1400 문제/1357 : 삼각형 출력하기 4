@@ -1,0 +1,55 @@
+#define _CRT_SECURE_NO_WARNINGS_
+#include <stdio.h>
+int main() {
+    //삼각형의 길이 n
+    int n;
+    //삼각형 모양
+    char ar = '*';
+    //빈칸
+    char empty = ' ';
+    //입력
+    scanf_s("%d", &n);
+
+    //왼쪽으로 꼭짓점이 나있는 삼각형 출력
+    for (int i = 1; i < n*2; i++) {                                       
+        //n값까지 출력 즉 5까지 출력함.
+        if (i <= n) {
+            for (int j = 1; j < i+1; j++) printf("%c", ar);
+        }
+        //n+1부터 10까지 출력
+        else if(i > n){        //i가 n+1부터 n*2-1까지 출력 즉, i가 6부터 9까지 4번출력함 6,7,8,9
+            for (int k = n*2; k > i; k--)  printf("%c", ar); //*의 개수는 점점 줄어들음.          
+        }
+        printf("\n");
+    }
+
+
+    ////왼쪽으로 꼭짓점이 나있는 삼각형 출력
+    //for (int i = 0; i <= n; i++) {
+    //    for (int j = 0; j < i; j++) {
+    //        printf("%c", ar);
+    //    }
+    //    printf("\n");
+    //}
+    //for (int k = n - 1; k > 0; k--) {
+    //    for (int j = 0; j < k; j++) {
+    //        printf("%c", ar);
+    //    }
+    //    printf("\n");
+    //}
+
+
+}
+/*
+5
+
+*
+**
+***
+****
+****
+***
+**
+*
+
+*/
