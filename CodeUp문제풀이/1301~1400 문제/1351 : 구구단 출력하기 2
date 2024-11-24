@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS_
+#include <stdio.h>
+int main() {
+    //시작단과 마지막 단
+    int first, last;
+    //입력
+    scanf("%d %d", &first,&last);
+    //구구단을 시작단부터 마지막 단까지 출력하기
+    for (int i = first; i <= last; i++) {
+
+        for (int j = 1; j <= 9; j++) {
+          //출력
+          printf("%d*%d=%d\n", i, j, i * j);
+        }
+    }
+
+}
