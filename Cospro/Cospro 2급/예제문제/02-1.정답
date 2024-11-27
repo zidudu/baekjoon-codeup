@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+int solution(int** watering_can, int watering_can_row_len, int watering_can_col_len, int N, int M) {
+	const int NO_WATER = 0;
+	const int WATER = 1;
+
+	int answer = 0;
+
+	int** garden = (int**)malloc(sizeof(int*) * N); //세로
+	for (int i = 0; i < N; i++) {
+		garden[i] = (int*)malloc(sizeof(int) * N); //가로
+	}
+
+	//초기화
+	for (int i = 0; i < N; i++) {  
+		for (int j = 0; j < N; j++) {
+			garden[i][j] = 0;
+		}
+	}
+
+	for (int i = 0; i < M; i++) {
+		int* can = watering_can[i];  //열이 가리키고 있는 열의 첫번째 주소를 can이 가리킴
+		garden[can[0]][can[1]] = 1; //garden[2][2] 이니 중앙을 1로 만듬
+		//*오류* => 스프링클러의 세기에 따라 반복하여 상하좌우를 뿌려주는데 문제는 for 부분에 <로 되어있어서 물뿌리는 범위가 한칸 낮아짐.
+		// 그래서 <=로 바꿔줘야 함 -> solution 함수의 반환 값은 13입니다.
+		for (int j = 1; j <= can[2]; j++) { //물의 세기만큼 반복 2
+			
+			if (can[0] + j < N) { // 세로 위치에서 j 값을 더했을때 이게 N(정원넓이) 보다 작다면 
+				//스프링클러의 아래쪽 물뿌림
+				garden[can[0] + j][can[1]] = WATER;  // 세로값 2에 + 1=3의 행과 가로값 2를 참으로 만듬 
+			}
+			if (can[0] - j >= 0) { // 스프링클러 위쪽 범위가 정원을 벗어나지 않는다면
+				//스프링클러의 위쪽 물뿌림
+				garden[can[0] - j][can[1]] = WATER;
+			}
+			if (can[1] + j < N) { // 오른쪽 범위가 정원을 벗어나지 않는다면
+				//스프링클러의 오른쪽 물뿌림
+				garden[can[0]][can[1] + j] = WATER; 
+			}
+			if (can[1] - j >= 0) { // 왼쪽 범위가 정원을 벗어나지 않는다면
+				//스프링클러의 왼쪽 물뿌림
+				garden[can[0]][can[1] - j] = WATER;
+			}
+		}
+	}
+	//물 안뿌린 곳 카운팅
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			if (garden[i][j] == NO_WATER) {
+				answer += 1;
+			}
+		}
+	}
+
+	return answer;
+}
+
+// 아래는 테스트케이스 출력을 해보기 위한 main 함수입니다. 아래에는 잘못된 부분이 없으니 위의 코드만 수정하세요.
+
+int main() {
+	int watering_can1_row_len = 2; //세로
+	int watering_can1_col_len = 3; //가로
+	int M1 = watering_can1_row_len; //세로의 값 2 를 M1이 할당받음
+	int** watering_can1 = (int**)malloc(sizeof(int*) * watering_can1_row_len); //2개의 행
+	for (int i = 0; i < watering_can1_row_len; i++)
+		watering_can1[i] = (int*)malloc(sizeof(int) * watering_can1_col_len); //3개의 열
+
+	watering_can1[0][0] = 2;			
+	watering_can1[0][1] = 2;
+	watering_can1[0][2] = 2;
+	watering_can1[1][0] = 0;
+	watering_can1[1][1] = 0;
+	watering_can1[1][2] = 1;
+
+	// 2 2 2 
+	// 0 0 1
+	int N1 = 5; // 정사각형 모양의 정원 가로세로 길이
+	int ret1 = solution(watering_can1, watering_can1_row_len, watering_can1_col_len, N1, M1);
+	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	printf("solution 함수의 반환 값은 %d입니다.\n", ret1);
+
+}
