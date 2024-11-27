@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+int solution(int** board, int board_row_len, int board_col_len) {
+    int min_avg = 100;
+	int max_avg = 0;
+
+	for (int i = 0; i < 5; i++) {
+		int sum_x = 0;
+		int sum_y = 0;
+		for (int j = 0; j < 5; j++) {
+			sum_x += [[quiz]];
+			sum_y += [[quiz]];
+		}
+
+		sum_x /= 5;
+		sum_y /= 5;
+
+		if (max_avg < sum_x) {
+			max_avg = sum_x;
+		}
+		if (max_avg < sum_y) {
+			max_avg = sum_y;
+		}
+		if (min_avg > sum_x) {
+			min_avg = sum_x;
+		}
+		if (min_avg > sum_y) {
+			min_avg = sum_y;
+		}
+
+	}
+
+	int sum_d1 = 0;
+	int sum_d2 = 0;
+
+	for (int i = 0; i < 5; i++) {
+		sum_d1 += [[quiz]];
+		sum_d2 += [[quiz]];
+	}
+
+	sum_d1 /= 5;
+	sum_d2 /= 5;
+
+	if (max_avg < sum_d1) {
+		max_avg = sum_d1;
+	}
+	if (max_avg < sum_d2) {
+		max_avg = sum_d2;
+	}
+	if (min_avg > sum_d1) {
+		min_avg = sum_d1;
+	}
+	if (min_avg > sum_d2) {
+		min_avg = sum_d2;
+	}
+
+	return min_avg + max_avg;
+}
+
+int main() {
+    int board1_row_len = 5;
+	int board1_col_len = 5;
+	int** board1 = (int**)malloc(sizeof(int*) * board1_row_len);
+	for(int i = 0; i < board1_row_len; i++)
+		board1[i] = (int*)malloc(sizeof(int) * board1_col_len);
+
+	board1[0][0] = 25;
+	board1[0][1] = 11;
+	board1[0][2] = 82;
+	board1[0][3] = 61;
+	board1[0][4] = 34;
+	board1[1][0] = 87;
+	board1[1][1] = 98;
+	board1[1][2] = 91;
+	board1[1][3] = 76;
+	board1[1][4] = 95;
+	board1[2][0] = 44;
+	board1[2][1] = 2;
+	board1[2][2] = 39;
+	board1[2][3] = 57;
+	board1[2][4] = 65;
+	board1[3][0] = 69;
+	board1[3][1] = 32;
+	board1[3][2] = 51;
+	board1[3][3] = 16;
+	board1[3][4] = 41;
+	board1[4][0] = 94;
+	board1[4][1] = 27;
+	board1[4][2] = 74;
+	board1[4][3] = 37;
+	board1[4][4] = 9;
+int ret1 = solution(board1, board1_row_len, board1_col_len);
+	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	printf("solution 함수의 반환 값은 %d입니다.\n", ret1);
+
+}
