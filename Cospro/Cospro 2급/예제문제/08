@@ -1,0 +1,387 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+int solution(int** arr, int arr_row_len, int arr_col_len) {
+	int N = 10;
+
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			if (arr[i][j] == 1) {
+				int length = 0;
+
+				for (int w = 2; w < 11; w++) {
+					bool is_square = true;
+
+					for (int di = i; di < [[quiz]]; di++) {
+						for (int dj = j; dj < [[quiz]]; dj++) {
+							if ([[quiz]]) {
+								is_square = false;
+								break;
+							}
+						}
+						if (!is_square) {
+							break;
+						}
+					}
+
+					if (is_square) {
+						length = w;
+					}
+					else {
+						break;
+					}
+				}
+
+				if (length > 1) {
+					for (int di = i; di < [[quiz]]; di++) {
+						for (int dj = j; dj < [[quiz]]; dj++) {
+							arr[di][dj] = 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			if (arr[i][j] == 1) {
+				return 0;
+			}
+		}
+	}
+
+	return 1;
+}
+
+int main() {
+    int arr1_row_len = 10;
+	int arr1_col_len = 10;
+	int** arr1 = (int**)malloc(sizeof(int*) * arr1_row_len);
+	for(int i = 0; i < arr1_row_len; i++)
+		arr1[i] = (int*)malloc(sizeof(int) * arr1_col_len);
+
+	arr1[0][0] = 0;
+	arr1[0][1] = 0;
+	arr1[0][2] = 0;
+	arr1[0][3] = 0;
+	arr1[0][4] = 0;
+	arr1[0][5] = 0;
+	arr1[0][6] = 0;
+	arr1[0][7] = 0;
+	arr1[0][8] = 0;
+	arr1[0][9] = 0;
+	arr1[1][0] = 0;
+	arr1[1][1] = 0;
+	arr1[1][2] = 0;
+	arr1[1][3] = 0;
+	arr1[1][4] = 0;
+	arr1[1][5] = 0;
+	arr1[1][6] = 0;
+	arr1[1][7] = 0;
+	arr1[1][8] = 0;
+	arr1[1][9] = 0;
+	arr1[2][0] = 0;
+	arr1[2][1] = 0;
+	arr1[2][2] = 0;
+	arr1[2][3] = 0;
+	arr1[2][4] = 0;
+	arr1[2][5] = 0;
+	arr1[2][6] = 1;
+	arr1[2][7] = 1;
+	arr1[2][8] = 1;
+	arr1[2][9] = 1;
+	arr1[3][0] = 0;
+	arr1[3][1] = 0;
+	arr1[3][2] = 1;
+	arr1[3][3] = 1;
+	arr1[3][4] = 1;
+	arr1[3][5] = 0;
+	arr1[3][6] = 1;
+	arr1[3][7] = 1;
+	arr1[3][8] = 1;
+	arr1[3][9] = 1;
+	arr1[4][0] = 0;
+	arr1[4][1] = 0;
+	arr1[4][2] = 1;
+	arr1[4][3] = 1;
+	arr1[4][4] = 1;
+	arr1[4][5] = 0;
+	arr1[4][6] = 1;
+	arr1[4][7] = 1;
+	arr1[4][8] = 1;
+	arr1[4][9] = 1;
+	arr1[5][0] = 0;
+	arr1[5][1] = 0;
+	arr1[5][2] = 1;
+	arr1[5][3] = 1;
+	arr1[5][4] = 1;
+	arr1[5][5] = 0;
+	arr1[5][6] = 1;
+	arr1[5][7] = 1;
+	arr1[5][8] = 1;
+	arr1[5][9] = 1;
+	arr1[6][0] = 0;
+	arr1[6][1] = 0;
+	arr1[6][2] = 0;
+	arr1[6][3] = 0;
+	arr1[6][4] = 0;
+	arr1[6][5] = 0;
+	arr1[6][6] = 0;
+	arr1[6][7] = 0;
+	arr1[6][8] = 0;
+	arr1[6][9] = 0;
+	arr1[7][0] = 0;
+	arr1[7][1] = 0;
+	arr1[7][2] = 0;
+	arr1[7][3] = 1;
+	arr1[7][4] = 1;
+	arr1[7][5] = 1;
+	arr1[7][6] = 1;
+	arr1[7][7] = 0;
+	arr1[7][8] = 0;
+	arr1[7][9] = 0;
+	arr1[8][0] = 0;
+	arr1[8][1] = 0;
+	arr1[8][2] = 0;
+	arr1[8][3] = 1;
+	arr1[8][4] = 1;
+	arr1[8][5] = 1;
+	arr1[8][6] = 1;
+	arr1[8][7] = 0;
+	arr1[8][8] = 0;
+	arr1[8][9] = 0;
+	arr1[9][0] = 0;
+	arr1[9][1] = 0;
+	arr1[9][2] = 0;
+	arr1[9][3] = 1;
+	arr1[9][4] = 1;
+	arr1[9][5] = 1;
+	arr1[9][6] = 1;
+	arr1[9][7] = 0;
+	arr1[9][8] = 0;
+	arr1[9][9] = 0;
+int ret1 = solution(arr1, arr1_row_len, arr1_col_len);
+	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	printf("solution 함수의 반환 값은 %d입니다.\n", ret1);
+int arr2_row_len = 10;
+	int arr2_col_len = 10;
+	int** arr2 = (int**)malloc(sizeof(int*) * arr2_row_len);
+	for(int i = 0; i < arr2_row_len; i++)
+		arr2[i] = (int*)malloc(sizeof(int) * arr2_col_len);
+
+	arr2[0][0] = 0;
+	arr2[0][1] = 0;
+	arr2[0][2] = 0;
+	arr2[0][3] = 0;
+	arr2[0][4] = 0;
+	arr2[0][5] = 0;
+	arr2[0][6] = 0;
+	arr2[0][7] = 0;
+	arr2[0][8] = 0;
+	arr2[0][9] = 0;
+	arr2[1][0] = 0;
+	arr2[1][1] = 0;
+	arr2[1][2] = 0;
+	arr2[1][3] = 0;
+	arr2[1][4] = 0;
+	arr2[1][5] = 0;
+	arr2[1][6] = 0;
+	arr2[1][7] = 1;
+	arr2[1][8] = 1;
+	arr2[1][9] = 1;
+	arr2[2][0] = 0;
+	arr2[2][1] = 1;
+	arr2[2][2] = 1;
+	arr2[2][3] = 1;
+	arr2[2][4] = 1;
+	arr2[2][5] = 1;
+	arr2[2][6] = 0;
+	arr2[2][7] = 1;
+	arr2[2][8] = 1;
+	arr2[2][9] = 1;
+	arr2[3][0] = 0;
+	arr2[3][1] = 1;
+	arr2[3][2] = 1;
+	arr2[3][3] = 1;
+	arr2[3][4] = 1;
+	arr2[3][5] = 1;
+	arr2[3][6] = 0;
+	arr2[3][7] = 1;
+	arr2[3][8] = 1;
+	arr2[3][9] = 1;
+	arr2[4][0] = 0;
+	arr2[4][1] = 1;
+	arr2[4][2] = 1;
+	arr2[4][3] = 1;
+	arr2[4][4] = 1;
+	arr2[4][5] = 1;
+	arr2[4][6] = 0;
+	arr2[4][7] = 1;
+	arr2[4][8] = 1;
+	arr2[4][9] = 1;
+	arr2[5][0] = 0;
+	arr2[5][1] = 1;
+	arr2[5][2] = 1;
+	arr2[5][3] = 1;
+	arr2[5][4] = 1;
+	arr2[5][5] = 1;
+	arr2[5][6] = 0;
+	arr2[5][7] = 1;
+	arr2[5][8] = 1;
+	arr2[5][9] = 1;
+	arr2[6][0] = 0;
+	arr2[6][1] = 1;
+	arr2[6][2] = 1;
+	arr2[6][3] = 1;
+	arr2[6][4] = 1;
+	arr2[6][5] = 1;
+	arr2[6][6] = 0;
+	arr2[6][7] = 1;
+	arr2[6][8] = 1;
+	arr2[6][9] = 1;
+	arr2[7][0] = 0;
+	arr2[7][1] = 1;
+	arr2[7][2] = 1;
+	arr2[7][3] = 1;
+	arr2[7][4] = 1;
+	arr2[7][5] = 0;
+	arr2[7][6] = 0;
+	arr2[7][7] = 0;
+	arr2[7][8] = 0;
+	arr2[7][9] = 0;
+	arr2[8][0] = 0;
+	arr2[8][1] = 1;
+	arr2[8][2] = 1;
+	arr2[8][3] = 1;
+	arr2[8][4] = 1;
+	arr2[8][5] = 0;
+	arr2[8][6] = 0;
+	arr2[8][7] = 0;
+	arr2[8][8] = 0;
+	arr2[8][9] = 0;
+	arr2[9][0] = 0;
+	arr2[9][1] = 0;
+	arr2[9][2] = 0;
+	arr2[9][3] = 0;
+	arr2[9][4] = 0;
+	arr2[9][5] = 0;
+	arr2[9][6] = 0;
+	arr2[9][7] = 0;
+	arr2[9][8] = 0;
+	arr2[9][9] = 0;
+int ret2 = solution(arr2, arr2_row_len, arr2_col_len);
+	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	printf("solution 함수의 반환 값은 %d입니다.\n", ret2);
+int arr3_row_len = 10;
+	int arr3_col_len = 10;
+	int** arr3 = (int**)malloc(sizeof(int*) * arr3_row_len);
+	for(int i = 0; i < arr3_row_len; i++)
+		arr3[i] = (int*)malloc(sizeof(int) * arr3_col_len);
+
+	arr3[0][0] = 0;
+	arr3[0][1] = 0;
+	arr3[0][2] = 0;
+	arr3[0][3] = 0;
+	arr3[0][4] = 0;
+	arr3[0][5] = 0;
+	arr3[0][6] = 0;
+	arr3[0][7] = 0;
+	arr3[0][8] = 0;
+	arr3[0][9] = 0;
+	arr3[1][0] = 0;
+	arr3[1][1] = 0;
+	arr3[1][2] = 0;
+	arr3[1][3] = 0;
+	arr3[1][4] = 0;
+	arr3[1][5] = 0;
+	arr3[1][6] = 0;
+	arr3[1][7] = 1;
+	arr3[1][8] = 1;
+	arr3[1][9] = 1;
+	arr3[2][0] = 0;
+	arr3[2][1] = 1;
+	arr3[2][2] = 1;
+	arr3[2][3] = 1;
+	arr3[2][4] = 1;
+	arr3[2][5] = 1;
+	arr3[2][6] = 0;
+	arr3[2][7] = 1;
+	arr3[2][8] = 1;
+	arr3[2][9] = 1;
+	arr3[3][0] = 0;
+	arr3[3][1] = 1;
+	arr3[3][2] = 1;
+	arr3[3][3] = 1;
+	arr3[3][4] = 1;
+	arr3[3][5] = 1;
+	arr3[3][6] = 0;
+	arr3[3][7] = 1;
+	arr3[3][8] = 1;
+	arr3[3][9] = 1;
+	arr3[4][0] = 0;
+	arr3[4][1] = 1;
+	arr3[4][2] = 1;
+	arr3[4][3] = 1;
+	arr3[4][4] = 1;
+	arr3[4][5] = 1;
+	arr3[4][6] = 0;
+	arr3[4][7] = 0;
+	arr3[4][8] = 1;
+	arr3[4][9] = 1;
+	arr3[5][0] = 0;
+	arr3[5][1] = 1;
+	arr3[5][2] = 1;
+	arr3[5][3] = 1;
+	arr3[5][4] = 1;
+	arr3[5][5] = 1;
+	arr3[5][6] = 0;
+	arr3[5][7] = 0;
+	arr3[5][8] = 1;
+	arr3[5][9] = 1;
+	arr3[6][0] = 0;
+	arr3[6][1] = 1;
+	arr3[6][2] = 1;
+	arr3[6][3] = 1;
+	arr3[6][4] = 1;
+	arr3[6][5] = 1;
+	arr3[6][6] = 0;
+	arr3[6][7] = 0;
+	arr3[6][8] = 0;
+	arr3[6][9] = 0;
+	arr3[7][0] = 0;
+	arr3[7][1] = 1;
+	arr3[7][2] = 1;
+	arr3[7][3] = 1;
+	arr3[7][4] = 0;
+	arr3[7][5] = 0;
+	arr3[7][6] = 0;
+	arr3[7][7] = 0;
+	arr3[7][8] = 0;
+	arr3[7][9] = 0;
+	arr3[8][0] = 0;
+	arr3[8][1] = 1;
+	arr3[8][2] = 1;
+	arr3[8][3] = 1;
+	arr3[8][4] = 0;
+	arr3[8][5] = 0;
+	arr3[8][6] = 0;
+	arr3[8][7] = 0;
+	arr3[8][8] = 0;
+	arr3[8][9] = 0;
+	arr3[9][0] = 0;
+	arr3[9][1] = 1;
+	arr3[9][2] = 1;
+	arr3[9][3] = 1;
+	arr3[9][4] = 0;
+	arr3[9][5] = 0;
+	arr3[9][6] = 0;
+	arr3[9][7] = 0;
+	arr3[9][8] = 0;
+	arr3[9][9] = 0;
+int ret3 = solution(arr3, arr3_row_len, arr3_col_len);
+	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	printf("solution 함수의 반환 값은 %d입니다.\n", ret3);
+
+}
