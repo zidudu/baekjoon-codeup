@@ -1,0 +1,46 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//h 값 입력
+	int h; //높이
+	//밑변 k 입력
+	int k; //밑변
+	//방향 정보 d 입력
+	char d; //방향 L R
+	//입력받기
+	scanf("%d %d %c", &h,&k,&d);
+	//평행사변형 출력
+	for (int i = 0; i < h; i++) {
+		
+		//공백 출력
+		//L일때 왼쪽 아래 공백
+		if (d == 'L') {
+			for (int m = 0; m <  i; m++) { // i값으로 하면 첨엔 공백 없고, 행마다 하나씩 공백 늘어감
+				printf(" ");
+			}
+		}
+		//R일때 오른쪽 아래 공백
+		else if (d == 'R') {
+			for (int m = 0; m < h - i - 1; m++) { // i가 시작은 0이라서 -1을 해줘야 끝 부분이 공백이 없음
+				printf(" ");
+			}
+		}
+		for (int j = 0; j < k; j++) {
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+
+/*
+
+5
+4
+L
+****
+ ****
+  ****
+   ****
+	****
+*/
