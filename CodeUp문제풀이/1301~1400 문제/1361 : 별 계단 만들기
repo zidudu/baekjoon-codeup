@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//n 값 입력
+	int n;
+	//입력받기
+	scanf("%d", &n);
+	
+
+	//삼각형 출력
+	for (int i = 0; i < n; i++) {
+		//공백 출력
+		for (int j = 0; j < i; j++) { //i가 증가될때마다 j의 공백갯수는 한칸씩 늘어남
+			printf(" ");
+		}
+		//값 출력
+		for (int k = i; k <i+2; k++) { //값이 2개로 일정함.
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+/*
+
+3
+**
+ **
+  **
+
+*/
+
