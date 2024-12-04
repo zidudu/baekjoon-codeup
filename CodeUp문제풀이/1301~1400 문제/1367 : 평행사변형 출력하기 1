@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//n 값 입력
+	int n;
+	//입력받기
+	scanf("%d", &n);
+	//평행사변형 출력
+	for (int i = 0; i < n; i++) {
+		
+		//공백 출력
+		for (int m = 0; m < n - i - 1; m++) { // i가 시작은 0이라서 -1을 해줘야 끝 부분이 공백이 없음
+			printf(" ");
+		}
+		for (int j = 0; j < n; j++) {
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+
+/*
+4
+   ****
+  ****
+ ****
+****
+*/
