@@ -1,0 +1,67 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int Finding_demical(int demical1, int demical2) {
+	int Non_demical = 0;
+	//두 값이 소수인지 판별하기
+	for (int k = 2; k * k <= demical1; k++) {
+		// k를 나눈 나머지가 0이면 2~i까지의 값에서 약수가 있다는 뜻이니 이것은 소수가 아님
+		if (demical1 % k == 0) {
+			//printf("demical1는 소수가 아니다. demical1 = %d => demical1 / k = %d / %d = %d\n", demical1,demical1, k, demical1 / k);
+			Non_demical = demical1 / k;
+			break;
+		}
+	}
+	for (int k = 2; k *k<= demical2; k++) {
+		//j도 똑같이 해줌
+		if (demical2 % k == 0) {
+			//printf("demical2는 소수가 아니다. demical2 = %d => demical2 / k = %d / %d = %d\n", demical2, demical2, k, demical2 / k);
+			Non_demical = demical2 / k;
+			break;
+		}
+	}
+	return Non_demical;
+}
+
+//소수 : 1보다 큰 자연수 중 1과 자기 자신만을 약수로 가지는 수다. 
+/*
+경우의 수 :   1. n = 1일때,
+			 2.n=2일때, 
+			 3.n이 소수일때, 
+			 4.n이 완전제곱수일때(4-1.완전제곱수이고 두 값이 소수일때 ,4-2. 완전제곱수인데 두 값 중 어느 한 값이 소수가 아닐때)
+			 5.n이 완전제곱수가 아닐때
+*/
+int main() {
+	//어떤 수 n 입력
+	int n;
+	scanf("%d", &n);
+	if (n < 1 && n>10000000) return 0;
+	//두 소수를 저장하는 변수
+	int demical1 = 0, demical2 = 0;
+	//세번째 소수(정확히는 소수가 아니면 이 값이 나오게 됨)
+	int Non_demical = 0;
+	int i = 0, j = 0, k;
+
+	for (i = 2; i*i <= n; i++) {
+			//i와 j를 곱했을때 n이 나오면 그것은 두 값을 곱한 것이 됨.
+			if (n % i == 0) {
+				//printf("두 값 %d * %d = %d == n = %d 이 나왔습니다\n", i, j, i * j, n);
+				//두 값을 일단 소수 변수에 넣어둠
+				demical1 = i; 
+				demical2 = n / i;
+				//for 문 나가기
+				break;
+			}
+	}
+
+	//두 값에서 소수를 찾아내기
+	Non_demical = Finding_demical(demical1, demical2);
+	//Non_demical에 값이 들어왔는지 확인
+	if (Non_demical == 0 && demical1 > 1 && demical2 > 1) {
+		printf("%d %d", demical1, demical2); //소수임
+	}
+	else {
+		printf("wrong number"); //둘 중 하나 소수 아님
+	}
+
+
+}
