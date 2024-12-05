@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    int isPrime, found = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (i = 2; i * i <= n; i++) {
+        if (n % i == 0) { // i로 나누어 떨어지는지 확인
+            // i가 소수인지 판별
+            isPrime = 1;
+            for (j = 2; j * j <= i; j++) {
+                //i가 소수가 아닐때
+                if (i % j == 0) {
+                    isPrime = 0;
+                    break;
+                }
+            }
+            if (isPrime) { // n / i가 소수인지 판별
+                int other = n / i;
+                isPrime = 1;
+                for (j = 2; j * j <= other; j++) {
+                    //j가 소수가 아닐때
+                    if (other % j == 0) {
+                        isPrime = 0;
+                        break;
+                    }
+                }
+                if (isPrime) { // 두 숫자가 모두 소수이면 출력
+                    if (i < other)
+                        printf("%d %d\n", i, other);
+                    else
+                        printf("%d %d\n", other, i);
+                    found = 1;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (!found) {
+        printf("wrong number\n");
+    }
+
+    return 0;
+}
