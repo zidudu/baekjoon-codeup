@@ -1,0 +1,49 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//마름모의 성질
+//모든 변의 길이가 같다
+//두 대각선은 서로 수직이다
+//대각선의 길이는 서로 같다
+
+//그러면 마름모를 만들때 먼저 지그재그를 만들어보자
+
+int main() {
+	//정수 n
+	int n;
+	scanf("%d", &n); // 5
+	if (n < 2 || n > 100) return 0;
+	//먼저 지그재그 만들기
+	for (int i = 0; i < n; i++) {
+		//공백 출력
+		for (int j = 0; j < (n-1) - i; j++) {
+			printf(" ");
+		}
+		// * 별출력
+		printf("*");
+		
+		//또 다른 지그재그 출력
+		//공백 출력
+		for (int j = 0; j < i*2; j++) {
+			printf(" ");
+		}
+		//별출력
+		printf("*\n");
+	}
+	for (int i = 0; i < n; i++) {
+		//공백 출력
+		for (int j = 0; j < i; j++) {
+			printf(" ");
+		}
+		// 별 출력
+		printf("*");
+		//지그재그
+		//공백 출력
+		for (int j = 0; j < ((n - 1)*2) - (i * 2); j++) {
+			printf(" ");
+		}
+		//별출력
+		printf("*\n");
+	}
+
+
+}
