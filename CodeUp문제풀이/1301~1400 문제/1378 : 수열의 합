@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//수학에서 수열(數列) 또는 열(列, sequence)은 수 또는 다른 대상의 순서 있는 나열이다.[1]
+//열에서 나열되는 항의 개수를 그 수열의 길이
+//수열의 합을 구해라
+int main() {
+	//정수 n
+	int n;
+	scanf("%d", &n); // 5
+	if (n > 50) return 0;
+	//총합 변수 
+	int total = 0;
+	//수열 변수
+	int sequence;
+	for (int i = 1; i <= n; i++) {
+		sequence = 0; // 초기화 필수.
+		for (int j = 1; j <= i; j++) { // 이 부분의 특징은 순서대로 값이 커짐.
+			sequence += j;
+		}
+		total = total + sequence; // S4 = 1 + (1+2) + (1+2+3) + (1+2+3+4)
+	}
+	printf("%d", total);
+
+}
