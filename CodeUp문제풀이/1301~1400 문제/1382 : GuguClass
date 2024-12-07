@@ -1,0 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	//행은 9개, 열은 4개이니 그것에 맞춰 i 범위와 j 범위를 정해준다.
+	for (int i = 1; i <= 9; i++) {
+		for (int j = 2; j <= 5; j++){
+			printf("%d x %d = %2d\t", j, i, i * j);
+		}
+		if(i!=9)printf("\n");
+	}
+}
